@@ -3,6 +3,7 @@ package lv.rvt;
 public class App 
 {
     public static void main( String[] args ) {
+        //
         System.out.println("main()");
         printStars(0);
         System.out.println("Program end..");
