@@ -3,7 +3,10 @@ package lv.rvt;
 import java.util.*;
 
 public class Stars {
+
     public static void printStars() {
-        System.out.println("*");
+        // Code goes here
     }
+
+    // Jūsu metodes būs šeit
 }

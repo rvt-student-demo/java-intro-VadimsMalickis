@@ -6,9 +6,9 @@ public class App
 {
     // Darbs pāros ar V. Uz.
     public static void main( String[] args ) {
-       
+        // Piemērs kā mēs izsaucam
+        // metodes no Stars klases
         Stars.printStars();
-
     }
 
     // Custom method
