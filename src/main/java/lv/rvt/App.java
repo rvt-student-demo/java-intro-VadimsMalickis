@@ -1,12 +1,19 @@
 package lv.rvt;
 
+import java.util.*;
+
 public class App 
 {
+    // Darbs pāros ar V. Uz.
     public static void main( String[] args ) {
-        //
-        System.out.println("main()");
-        printStars(0);
-        System.out.println("Program end..");
+       
+        Stars.printStars();
+
+    }
+
+    // Custom method
+    public static int getValue() {
+        return 58;
     }
 
     public static void printStars(int number) {
