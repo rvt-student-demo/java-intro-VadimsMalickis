@@ -11,17 +11,12 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class Utils {
-    private static Path getFilePath(String filename) {
-        try {
-            URL resourceUrl = App.class.getClassLoader().getResource(filename);
-            if (resourceUrl == null) {
-                throw new FileNotFoundException("File not found: " + filename);
-            }
-            return Paths.get(resourceUrl.toURI());
-        } catch (Exception e) {
-            e.printStackTrace();
+    private static Path getFilePath(String filename) throws FileNotFoundException {
+        Path filePath = Paths.get("data", filename);
+        if (!Files.exists(filePath)) {
+            throw new FileNotFoundException("File not found: " + filename);
         }
-        return null;
+        return filePath;
     }
     public static BufferedReader getReader(String filename) throws IOException {
        return Files.newBufferedReader(getFilePath(filename));
