@@ -9,19 +9,22 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class Utils {
+
+public class Helper {
+
+    public static BufferedReader getReader(String filename) throws IOException {
+       return Files.newBufferedReader(getFilePath(filename));
+    }
+
+    public static BufferedWriter getWriter(String filename, StandardOpenOption option) throws IOException {
+       return Files.newBufferedWriter(getFilePath(filename), option);
+    }
+
     private static Path getFilePath(String filename) throws FileNotFoundException {
         Path filePath = Paths.get("data", filename);
         if (!Files.exists(filePath)) {
             throw new FileNotFoundException("File not found: " + filename);
         }
         return filePath;
-    }
-    public static BufferedReader getReader(String filename) throws IOException {
-       return Files.newBufferedReader(getFilePath(filename));
-    }
-
-    public static BufferedWriter getWriter(String filename) throws IOException {
-       return Files.newBufferedWriter(getFilePath(filename), StandardOpenOption.APPEND);
     }
 }
