@@ -1,9 +1,6 @@
 package lv.rvt;
 
-import java.io.BufferedWriter;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 import lv.rvt.exercises.PersonManager;
