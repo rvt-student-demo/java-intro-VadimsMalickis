@@ -1,10 +1,14 @@
 package lv.rvt;
 
+import lv.rvt.exercises.SimpleDate;
+
 public class Person {
     private String name;
     private int age;
     private int weight;
     private int height;
+    // Glabājam saiti uz citu objektu
+    private SimpleDate birthday;
 
     // Mūsu galvenais konstruktors
     public Person(String name, int age, int weight, int height) {
@@ -18,8 +22,12 @@ public class Person {
         this(name, age, 0, 0);
     }
 
+    public Person(String name, SimpleDate date) {
+        this(name, 0, 0, 0);
+        this.birthday = date;
+    }
+
     public Person(String name) {
-        // Visur varam izsaukt galveno konstruktoru
         this(name, 0, 0, 0);
     }
 
@@ -28,14 +36,22 @@ public class Person {
         return this.weight / (heigthPerHundred * heigthPerHundred);
     }
 
-    // Getter and Setter methods
     public String getName() {
         return this.name;
+    }
+
+    public int getAge() {
+        return this.age;
     }
 
     public int getWeight() {
         return this.weight;
     }
+
+    public int getHeigth() {
+        return this.height;
+    }
+
 
     public void setWeight(int weight) {
         this.weight = weight;
@@ -47,9 +63,7 @@ public class Person {
     }
 
     // Getter un Setter metodes
-    public int getAge() {
-        return this.age;
-    }
+  
 
     public void setAge(int age) {
         this.age = age;
@@ -81,9 +95,9 @@ public class Person {
     }
 
     // Aizvietot ar toString metodi
-    public String toString() {
-        return this.name + ", age " + this.age + " years, my body mass index is " + this.bodyMassIndex();
-    }
+    // public String toString() {
+    //     return this.name + ", age " + this.age + " years, my body mass index is " + this.bodyMassIndex();
+    // }
     
 
 

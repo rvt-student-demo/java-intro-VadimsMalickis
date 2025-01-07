@@ -1,21 +1,33 @@
 package lv.rvt;
 
+import lv.rvt.exercises.SimpleDate;
+
 public class Student {
 
     private String name;
-
-    private int credits;
-
-    public Student(int credit) {
-        this.credits = credit;
+    public Student(String name) {
+        this.name = name;
     }
-    
-    public void play() {
-        this.credits -= 8;
+
+    public String getName() {
+        return this.name;
     }
 
     @Override
-    public String toString() {
-        return "Student credits: " + this.credits;
+    public boolean equals(Object compared) {
+        if (this == compared) {
+            return true;
+        }
+
+        if (!(compared instanceof Student)) {
+            return false;
+        }
+        
+        Student comparedStudent = (Student) compared;
+
+        if (this.name.equals(comparedStudent.getName())) {
+            return true;
+        }
+        return false;
     }
 }
