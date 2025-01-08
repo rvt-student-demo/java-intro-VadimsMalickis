@@ -5,7 +5,9 @@ public class Main
 
     public static void main(String[] args) throws Exception {  
         
+        Person person = new Person("John");
 
+        System.out.println(person instanceof Object);
     }
 
     
