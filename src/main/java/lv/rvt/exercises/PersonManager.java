@@ -17,7 +17,7 @@ public class PersonManager {
         String line;
         while ((line = reader.readLine()) != null) {
             String[] parts = line.split(", ");
-            Person person1 = new Person(parts[0], Integer.valueOf(parts[1]), Integer.valueOf(parts[2]), Integer.valueOf(parts[3]));
+            Person person1 = new Person(parts[0], Integer.valueOf(parts[1]), Integer.valueOf(parts[2]), Integer.valueOf(parts[3]), "unknown");
             persons.add(person1);
         }
         return persons;

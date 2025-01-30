@@ -5,9 +5,6 @@ public class Product {
     private int quantity;
     private String name;
 
-    // Automatically created constructor method
-    // by Java
-
     // Constructor
     public Product(String initialName, double initialPrice, int initialQuantity) {
         this.price = initialPrice;
@@ -16,7 +13,6 @@ public class Product {
     }
 
     public void printProduct() {
-        // Banana, price 1.1, 13 pcs
         System.out.println(
             this.name + ", price " + this.price + ", " + this.quantity + " pcs"
         );

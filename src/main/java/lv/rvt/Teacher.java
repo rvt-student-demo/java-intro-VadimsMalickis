@@ -1,8 +1,8 @@
 package lv.rvt;
 
-public class Student extends Person {
+public class Teacher extends Person {
 
-    public Student(
+    public Teacher(
         String name,
         int age,
         int weight,
@@ -10,10 +10,5 @@ public class Student extends Person {
         String address
     ) {
         super(name, age, weight, height, address);
-
-    }
-
-    public String getType() {
-        return "Student";
     }
 }

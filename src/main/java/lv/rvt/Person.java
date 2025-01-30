@@ -1,34 +1,31 @@
 package lv.rvt;
 
-import lv.rvt.exercises.SimpleDate;
-
 public class Person {
     private String name;
     private int age;
     private int weight;
     private int height;
-    // Glabājam saiti uz citu objektu
-    private SimpleDate birthday;
+    // Jauns klases lauks
+    private String address;
 
     // Mūsu galvenais konstruktors
-    public Person(String name, int age, int weight, int height) {
+    // All args constructor
+    public Person(
+        String name,
+        int age,
+        int weight,
+        int height,
+        String address
+    ) {
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.height = height;
+        this.address = address;
     }
-
-    public Person(String name, int age) {
-        this(name, age, 0, 0);
-    }
-
-    public Person(String name, SimpleDate date) {
-        this(name, 0, 0, 0);
-        this.birthday = date;
-    }
-
-    public Person(String name) {
-        this(name, 0, 0, 0);
+    // Constructor overloading
+    public Person(String name, String address) {
+        this(name, 0, 0, 0, address); // Izsaucam galveno konstruktoru
     }
 
     public double bodyMassIndex() {
@@ -79,14 +76,13 @@ public class Person {
         this.age = this.age + year;
     }
 
-
     public int returnAge() {
 
 
         return this.age;
     }
 
-    public boolean isOfLegalAge() {
+    public final boolean isOfLegalAge() {
         return this.age >= 18;
     }
 
@@ -94,11 +90,36 @@ public class Person {
         return this.name + ", " + this.age + ", " + this.weight + ", " + this. height;
     }
 
-    // Aizvietot ar toString metodi
-    // public String toString() {
-    //     return this.name + ", age " + this.age + " years, my body mass index is " + this.bodyMassIndex();
-    // }
+    @Override
+    public String toString() {
+        return this.name + "\n\t" + this.address;
+    }
     
 
-
+    public boolean equals(Object obj) {
+             // if the variables are located in the same position, they are equal
+             if (this == obj) {
+                return true;
+            }
+    
+            // if the compared object is not of type Person, the objects are not equal
+            if (!(obj instanceof Person)) {
+                return false;
+            }
+    
+            // convert the object into a Person object
+            Person comparedPerson = (Person) obj;
+            
+            // if the values of the object variables are equal, the objects are equal
+            if (this.name.equals(comparedPerson.name) &&
+                this.age == comparedPerson.age &&
+                this.weight == comparedPerson.weight &&
+                this.height == comparedPerson.height) {
+                return true;
+            }
+    
+            // otherwise the objects are not equal
+            return false;
+    }
+    
 }
