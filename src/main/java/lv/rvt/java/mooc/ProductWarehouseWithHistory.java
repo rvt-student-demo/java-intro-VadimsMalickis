@@ -1,7 +1,5 @@
 package lv.rvt.java.mooc;
 
-import lv.rvt.ChangeHistory;
-
 public class ProductWarehouseWithHistory extends ProductWarehouse {
 
     private ChangeHistory history;

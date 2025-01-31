@@ -1,4 +1,4 @@
-package lv.rvt;
+package lv.rvt.java.mooc;
 
 public class Warehouse {
     private double capacity;

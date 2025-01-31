@@ -1,4 +1,4 @@
-package lv.rvt;
+package lv.rvt.java.mooc;
 
 import java.util.ArrayList;
 

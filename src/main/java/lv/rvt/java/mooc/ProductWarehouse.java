@@ -1,7 +1,5 @@
 package lv.rvt.java.mooc;
 
-import lv.rvt.Warehouse;
-
 public class ProductWarehouse extends Warehouse{
 
     private String productName;
