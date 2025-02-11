@@ -1,4 +1,4 @@
-package lv.rvt.exercises;
+package lv.rvt.java.mooc;
 
 public class PaymentCard {
 

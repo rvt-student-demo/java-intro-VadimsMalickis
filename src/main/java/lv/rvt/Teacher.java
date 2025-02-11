@@ -11,4 +11,5 @@ public class Teacher extends Person {
     ) {
         super(name, age, weight, height, address);
     }
+
 }

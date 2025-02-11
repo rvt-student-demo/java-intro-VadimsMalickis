@@ -1,4 +1,4 @@
-package lv.rvt.exercises;
+package lv.rvt.java.mooc;
 
 public class PaymentTerminal {
     private double money;  // amount of cash

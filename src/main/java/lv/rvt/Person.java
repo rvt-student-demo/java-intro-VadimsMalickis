@@ -5,11 +5,8 @@ public class Person {
     private int age;
     private int weight;
     private int height;
-    // Jauns klases lauks
     private String address;
-
-    // Mūsu galvenais konstruktors
-    // All args constructor
+    
     public Person(
         String name,
         int age,
@@ -23,10 +20,11 @@ public class Person {
         this.height = height;
         this.address = address;
     }
-    // Constructor overloading
+    
     public Person(String name, String address) {
         this(name, 0, 0, 0, address); // Izsaucam galveno konstruktoru
     }
+
 
     public double bodyMassIndex() {
         double heigthPerHundred = this.height / 100.0;
@@ -49,18 +47,13 @@ public class Person {
         return this.height;
     }
 
-
     public void setWeight(int weight) {
         this.weight = weight;
     }
 
-
     public void setName(String name) {
         this.name = name;
     }
-
-    // Getter un Setter metodes
-  
 
     public void setAge(int age) {
         this.age = age;
@@ -70,31 +63,22 @@ public class Person {
         this.age++; // age = age + 1;
     }
 
-
     // Method overloading
     public void growOlder(int year) {
         this.age = this.age + year;
     }
 
-    public int returnAge() {
-
-
-        return this.age;
-    }
-
     public final boolean isOfLegalAge() {
         return this.age >= 18;
     }
-
     public String toCsvRow() {
-        return this.name + ", " + this.age + ", " + this.weight + ", " + this. height;
+        return this.name + ", " + this.age + ", " + this.weight + ", " + this.height + ", " + this.address;
     }
 
     @Override
     public String toString() {
         return this.name + "\n\t" + this.address;
     }
-    
 
     public boolean equals(Object obj) {
              // if the variables are located in the same position, they are equal

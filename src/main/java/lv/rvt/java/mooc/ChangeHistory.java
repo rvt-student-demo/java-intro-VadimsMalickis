@@ -9,8 +9,8 @@ public class ChangeHistory {
         this.records = new ArrayList<>();
     }
 
-    public void add(double status) {
-        this.records.add(status);
+    public void add(double currentBalance) {
+        this.records.add(currentBalance);
     }
 
     public void clear() {

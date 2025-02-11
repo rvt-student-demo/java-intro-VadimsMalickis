@@ -1,24 +1,26 @@
 package lv.rvt.java.mooc;
 
-public class ProductWarehouse extends Warehouse{
+// PW
+public class ProductWarehouse extends Warehouse {
 
-    private String productName;
+    private String wareHouseName; // Jaunu klases lauku
 
-    public ProductWarehouse(String productName, double capacity) {
-        super(capacity);
-        this.productName = productName;
+    public ProductWarehouse(String name, double capacity) {
+        super(capacity); // Mūsu super klase ir Warehouse
+        this.wareHouseName = name;
     }
 
     public String getName() {
-        return this.productName;
+        return this.wareHouseName;
     }
     public void setName(String name) {
-        this.productName = name;
+        this.wareHouseName = name;
     }
 
     @Override
     public String toString() {
-        return this.productName + ": " + super.toString();
+        return getName() + ": " + super.toString();
+
     }
 
 }

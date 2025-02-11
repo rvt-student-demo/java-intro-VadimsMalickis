@@ -1,4 +1,4 @@
-name, age, weigth, height
-John, 20, 60, 170
-Peter, 30, 55, 180
-Jack, 20, 50, 150
+name, age, weigth, height, address
+John, 20, 60, 170, Riga
+Peter, 30, 55, 180, NY
+Jack, 20, 50, 150, Oslo
