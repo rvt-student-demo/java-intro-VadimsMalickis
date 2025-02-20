@@ -12,19 +12,17 @@ public class PersonManager {
         BufferedReader reader = Helper.getReader("persons.csv");
 
         ArrayList<Person> personList = new ArrayList<>();
-        String Line;
+        String line;
 
-        reader.readLine();
-        
-        while ((Line = reader.readLine()) != null) {
-            String[] parts = Line.split(", ");
+        reader.readLine(); // Ignorējam titul rindiņu        
+        while ((line = reader.readLine()) != null) {
+            String[] parts = line.split(", ");
 
-            String name, address;
-            int age, weight, height;
-            name = parts[0]; address = parts[4];
-            age = Integer.valueOf(parts[1]); 
-            weight = Integer.valueOf(parts[1]); 
-            height = Integer.valueOf(parts[1]); 
+            String name = parts[0];
+            int age = Integer.valueOf(parts[1]);
+            int weight = Integer.valueOf(parts[2]);
+            int height = Integer.valueOf(parts[3]);
+            String address = parts[4];
 
             Person person = new Person(name, age, weight, height, address);
             personList.add(person);

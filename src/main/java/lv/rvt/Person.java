@@ -1,11 +1,13 @@
 package lv.rvt;
 
 public class Person {
+    
     private String name;
     private int age;
     private int weight;
     private int height;
     private String address;
+    
     
     public Person(
         String name,
@@ -45,6 +47,9 @@ public class Person {
 
     public int getHeigth() {
         return this.height;
+    }
+    public String getAddress() {
+        return this.address;
     }
 
     public void setWeight(int weight) {
