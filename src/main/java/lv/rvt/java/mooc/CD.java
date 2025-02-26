@@ -10,10 +10,8 @@ public class CD implements Packable {
         this.name = name;
         this.year = year;
     }
-
     @Override
     public double weight() {
         return 0.1;
     }
-
 }
