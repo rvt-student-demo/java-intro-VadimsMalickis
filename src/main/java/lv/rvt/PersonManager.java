@@ -4,10 +4,18 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import lv.rvt.tools.Helper;
 
 public class PersonManager {
+
+    private static final String delimiter = ", ";
+
+    public void run() {
+        
+    }
+
     public static ArrayList<Person> getPersonList() throws Exception {
         BufferedReader reader = Helper.getReader("persons.csv");
 
@@ -16,7 +24,7 @@ public class PersonManager {
 
         reader.readLine(); // Ignorējam titul rindiņu        
         while ((line = reader.readLine()) != null) {
-            String[] parts = line.split(", ");
+            String[] parts = line.split(PersonManager.delimiter);
 
             String name = parts[0];
             int age = Integer.valueOf(parts[1]);
@@ -30,7 +38,7 @@ public class PersonManager {
         return personList;
     }
 
-    public static void showPersonList() throws Exception{
+    public static void printPersonTable() throws Exception{
         ArrayList<Person> personList = new ArrayList<>();
         System.out.println("name, age, weight, height, address");
         personList = PersonManager.getPersonList();
@@ -49,7 +57,7 @@ public class PersonManager {
         writer.close();
     }
 
-    public static void addPerson(String line) throws Exception{
+    public static void addPerson(String line) throws Exception {
         String[] parts = line.split(" ");
         
         String name, address;
@@ -62,5 +70,29 @@ public class PersonManager {
         Person person = new Person(name, age, weight, height, address);
 
         addPerson(person);
+    }
+
+    public static void sortPersonListBy() {
+         ArrayList<Person> personList = new ArrayList<>();
+
+        personList.add(new Person("Jack", "Talsi"));
+        personList.add(new Person("John", "Riga"));
+        personList.add(new Person("Peter", "Ogre"));
+        personList.add(new Person("Andrejs", "Salaspils"));
+        personList.add(new Person("Max", "Atašiene"));
+
+        // sort by name vai nu sort by address
+    
+        // Person objektu sortēšana pēc lauka <address>
+        personList.sort(Comparator.comparing(Person::getAddress));
+
+        // Pārbaudam rezultātu pēc sortēšanas
+        // for (Person person : personList) {
+        //     System.out.println(person.getAddress());
+        // }
+
+        // Filtrēšana
+        int[] intArr2 = {5, 4, 3, 7, 6, 2};
+        String[] stringArr2 = {"John", "Peter", "Ozols", "Ernests", "Jack", "Samuel"};
     }
 }
