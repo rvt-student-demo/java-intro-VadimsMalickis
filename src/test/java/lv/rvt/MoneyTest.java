@@ -12,9 +12,13 @@ public class MoneyTest {
 
     @Test
     public void testMoneyCreation() {
-        Money money = new Money(5, 50);
-        assertEquals(5, money.euros());
-        assertEquals(50, money.cents());
+        Money money1 = new Money(5, 50);
+        assertEquals(5, money1.euros());
+        assertEquals(50, money1.cents());
+
+        Money money2= new Money(1, 5034);
+        assertEquals(51, money1.euros());
+        assertEquals(34, money1.cents());
     }
 
     @Test
