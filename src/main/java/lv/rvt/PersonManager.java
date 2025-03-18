@@ -95,4 +95,22 @@ public class PersonManager {
         int[] intArr2 = {5, 4, 3, 7, 6, 2};
         String[] stringArr2 = {"John", "Peter", "Ozols", "Ernests", "Jack", "Samuel"};
     }
+
+    public void delete(Person person) throws Exception {    
+        ArrayList<Person> personList = getPersonList();
+        personList.removeIf(p -> p.equals(person));
+
+        // StandardOpenOption.TRUNCATE_EXISTING - izdzēš visu saturu
+        BufferedWriter writer = Helper.getWriter("persons.csv", StandardOpenOption.TRUNCATE_EXISTING);
+        
+        writer.write("name, age, weight, height, address"); // Header row
+        writer.newLine();
+        
+        // Pārrakstam failu ar jaunajiem datiem
+        for (Person p : personList) {
+            writer.write(p.toCsvRow());
+            writer.newLine();
+        }
+        writer.close();
+}
 }
